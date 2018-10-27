@@ -40,10 +40,10 @@ public class Factura {
 		return calcularSubTotal()*0.18;
 	}
 	
-//	public double calcularTotal() {
-//		
-//		
-//	}
+	public double calcularTotal() {
+		
+		return calcularSubTotal()-calcularIgv();
+	}
 	
 	
 
