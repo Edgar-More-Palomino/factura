@@ -1,5 +1,5 @@
 
-public class Articulo {
+public class Electrodomestico {
 	private int voltaje;
 	private double precio;
 	private String marca;

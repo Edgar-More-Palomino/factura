@@ -1,28 +1,50 @@
 import java.util.List;
 
 public class Factura {
-	private List<Articulo> articulos;
-	private Cliente clientes;
+	private List<Electrodomestico> electrodomesticos;
+	private Cliente cliente;
 
-	public List<Articulo> getArticulos() {
-		return articulos;
+	public List<Electrodomestico> getElectrodomesticos() {
+		return electrodomesticos;
 	}
 
-	public void setArticulos(List<Articulo> articulos) {
-		this.articulos = articulos;
+	public void setElectrodomesticos(List<Electrodomestico> electrodomesticos) {
+		this.electrodomesticos = electrodomesticos;
 	}
 
-	public Cliente getClientes() {
-		return clientes;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setClientes(Cliente clientes) {
-		this.clientes = clientes;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@Override
 	public String toString() {
-		return "Factura [articulos=" + articulos + ", clientes=" + clientes + "]";
+		return "Factura [electrodomesticos=" + electrodomesticos + ", cliente=" + cliente + "]";
 	}
+
+	public double calcularSubTotal() {
+		double precio = 0;
+		for (int x = 0; x < electrodomesticos.size(); x++) {
+			Electrodomestico electrodomestico = electrodomesticos.get(x);
+			precio += electrodomestico.getPrecio();
+		}
+		return precio;
+	}
+	
+	public double calcularIgv() {
+		
+		
+		return calcularSubTotal()*0.18;
+	}
+	
+//	public double calcularTotal() {
+//		
+//		
+//	}
+	
+	
 
 }

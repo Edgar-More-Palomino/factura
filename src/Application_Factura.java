@@ -4,24 +4,22 @@ import java.util.List;
 public class Application_Factura {
 
 	public static void main(String[] args) {
-		
-		Factura factura = new Factura();
-		
-		List<Articulo> articulos = new ArrayList<Articulo>();
-		articulos.add(construirArticulo());
-		articulos.add(construirArticulo());
 
-		
-		
-		factura.setClientes(construirCliente());
-		factura.setArticulos(articulos);
+		Factura factura = new Factura();
+
+		List<Electrodomestico> electrodomesticos = new ArrayList<Electrodomestico>();
+		electrodomesticos.add(construirArticulo());
+		electrodomesticos.add(construirArticulo());
+
+		factura.setCliente(construirCliente());
+		factura.setElectrodomesticos(electrodomesticos);
 
 		System.out.println(factura);
 
 	}
 
-	private static Articulo construirArticulo() {
-		Articulo articulo = new Articulo();
+	private static Electrodomestico construirArticulo() {
+		Electrodomestico articulo = new Electrodomestico();
 		articulo.setMarca("sansumg");
 		articulo.setPrecio(123.34);
 		articulo.setVoltaje(220);
@@ -34,5 +32,7 @@ public class Application_Factura {
 		cliente.setNombre("edgar");
 		return cliente;
 	}
+	
+	
 
 }
